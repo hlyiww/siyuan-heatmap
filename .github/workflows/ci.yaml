@@ -9,6 +9,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Get version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
         with:
@@ -20,11 +24,15 @@ jobs:
       - run: pnpm install --frozen-lockfile
 
       - name: Build
-        run: pnpm run build
+        run: export RELEASE_VERSION=${{ steps.get_version.outputs.VERSION }} &&  pnpm run build
+
+      - name: BuildJS
+        run: export RELEASE_VERSION=${{ steps.get_version.outputs.VERSION }} && node ./build/build.js
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist
+          github_token: ${{ secrets.TOKEN }}
+          publish_dir: ./dist
           publish_branch: main
+          exclude_assets: ""
