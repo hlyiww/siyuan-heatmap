@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import AutoImport from "unplugin-auto-import/vite";
 import Unocss from "unocss/vite";
+import transformerDirective from "@unocss/transformer-directives";
 import path from "path";
 
 export default defineConfig(() => {
@@ -13,7 +14,9 @@ export default defineConfig(() => {
         imports: ["vue"],
         dts: "src/auto-import.d.ts",
       }),
-      Unocss({}),
+      Unocss({
+        transformers: [transformerDirective()],
+      }),
     ],
     resolve: {
       alias: {

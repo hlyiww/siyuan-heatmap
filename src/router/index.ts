@@ -7,7 +7,7 @@ const routes: readonly RouteRecordRaw[] = [
     children: [
       {
         path: "/heat-map",
-        component: () => import("@/components/heat-map.vue"),
+        component: () => import("@/components/HeatMap/index.vue"),
       },
     ],
   },
