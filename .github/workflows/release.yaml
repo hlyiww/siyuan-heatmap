@@ -21,9 +21,9 @@ jobs:
         uses: actions/create-release@master
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-          with:
-            tag_name: v${{ steps.version.outputs.value }}
-            release_name: v${{ steps.version.outputs.value }}
-            body: Release v${{ steps.version.outputs.value }}
-            draft: false
-            prerelease: false
+        with:
+          tag_name: v${{ steps.version.outputs.value }}
+          release_name: v${{ steps.version.outputs.value }}
+          body: Release v${{ steps.version.outputs.value }}
+          draft: false
+          prerelease: false
