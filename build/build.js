@@ -54,6 +54,7 @@ const main = () => {
   fs.writeFileSync("./dist/README.md", createReadme(), {
     encoding: "utf-8",
   });
+  fs.writeFileSync("./dist/preview.png", fs.readFileSync("./preview.png"));
   fs.mkdirSync("./dist/.github");
   fs.mkdirSync("./dist/.github/workflows");
   fs.writeFileSync("./dist/.github/workflows/release.yaml", createCI(), {

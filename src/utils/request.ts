@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const getCurrentServerUrl = (port = "64407") => {
+const getCurrentServerUrl = (port = "6806") => {
   const { protocol, hostname } = window.location;
   return `${protocol}//${hostname}:${port}`;
 };

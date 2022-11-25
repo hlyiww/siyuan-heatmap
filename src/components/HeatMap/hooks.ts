@@ -21,7 +21,7 @@ export const getParsedData = async (data: Ref<Array<any>>, limit = 50) => {
   const [{ ["count(*)"]: totalCount }] = (await getNotesCount()) as any;
   const times = Math.ceil(totalCount / limit);
   let originalData = [] as Array<any>;
-  Array.from({ length: times }).forEach(async (__, index) => {
+  for (let [index, __] of Array.from({ length: times }).entries()) {
     originalData = originalData.concat(
       await getDataByLimit(limit, limit * index)
     );
@@ -40,5 +40,5 @@ export const getParsedData = async (data: Ref<Array<any>>, limit = 50) => {
       });
       data.value = parsedArray;
     }
-  });
+  }
 };
