@@ -2,7 +2,7 @@
   <div class="w-full h-full text-8px">
     <calendar-heatmap
       :values="values"
-      :end-date="getEndDate"
+      :end-date="getEndDate()"
       no-data-text="nothing for this day"
       :round="2"
       tooltip-unit="notes"
