@@ -5,6 +5,7 @@ specifiers:
   '@unocss/transformer-directives': ^0.46.5
   '@vitejs/plugin-vue': ^3.2.0
   axios: ^1.1.3
+  dayjs: ^1.11.6
   pinia: ^2.0.24
   sass: ^1.56.1
   stylelint: ^14.15.0
@@ -27,6 +28,7 @@ devDependencies:
   '@unocss/transformer-directives': 0.46.5
   '@vitejs/plugin-vue': 3.2.0_vite@3.2.4+vue@3.2.45
   axios: 1.1.3
+  dayjs: 1.11.6
   pinia: 2.0.24_mgnvym7yiazkylwwogi5r767ue
   sass: 1.56.1
   stylelint: 14.15.0
@@ -773,6 +775,10 @@ packages:
 
   /csstype/2.6.21:
     resolution: {integrity: sha512-Z1PhmomIfypOpoMjRQB70jfvy/wxT50qW08YXO5lMIJkrdq4yOTR+AW7FqutScmB9NkLwxo+jU+kZLbofZZq/w==}
+
+  /dayjs/1.11.6:
+    resolution: {integrity: sha512-zZbY5giJAinCG+7AGaw0wIhNZ6J8AhWuSXKvuc1KAyMiRsvGQWqh4L+MomvhdAYjN+lqvVCMq1I41e3YHvXkyQ==}
+    dev: true
 
   /de-indent/1.0.2:
     resolution: {integrity: sha512-e/1zu3xH5MQryN2zdVaF0OrdNLUbvWxzMbi+iNA6Bky7l1RoP8a2fIbRocyHclXt/arDrrR6lL3TqFD9pMQTsg==}
